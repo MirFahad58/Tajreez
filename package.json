@@ -1,0 +1,33 @@
+{
+  "name": "KingFaisal",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "react": "16.0.0",
+    "react-native": "0.51",
+    "react-native-animatable": "^1.2.4",
+    "react-native-i18n": "^2.0.10",
+    "react-native-indicators": "^0.10.0",
+    "react-native-splash-screen": "^3.0.6",
+    "react-navigation": "^1.0.0-beta.22",
+    "react-navigation-redux-helpers": "^1.0.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-jest": "22.4.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.4.2",
+    "react-test-renderer": "16.2.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
