@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View , Platform} from 'react-native';
-import { NavigationActions } from 'react-navigation'
 
 
 class Splash extends Component {
   constructor({ navigation }){
     super()
-  }
-  
-  componentDidMount() {
-    // const resetAction = NavigationActions.reset({
-    //         index: 0,
-    //         actions: [
-    //             NavigationActions.navigate({ routeName: 'Tab' })
-    //         ]
-    //     })
-    //     this.props.navigation.dispatch(resetAction)
   }
   
   render() {

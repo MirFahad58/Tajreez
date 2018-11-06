@@ -1,70 +1,67 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addNavigationHelpers } from 'react-navigation';
 import PropTypes from 'prop-types';
 import Navigator from './Navigator';
-import { BackHandler } from 'react-native'
-import { NavigationActions } from 'react-navigation'
 import {
-  createReduxBoundAddListener,
+  createStackNavigator,
+} from 'react-navigation';
+import {
+  createStore,
+  applyMiddleware,
+  combineReducers,
+} from 'redux';
+import {
+  reduxifyNavigator,
   createReactNavigationReduxMiddleware,
+  createNavigationReducer,
 } from 'react-navigation-redux-helpers';
+import Splash from '../components/splash/splash';
+// import navReducer from './reducer'
+
+
+const AppNavigator = createStackNavigator({
+  SplashScreen: {
+    screen: Splash,
+    navigationOptions : {
+      header : null
+    }
+  }
+});
+
+const navReducer = createNavigationReducer(AppNavigator);
+const appReducer = combineReducers({
+  nav: navReducer
+});
 
 const middleware = createReactNavigationReduxMiddleware(
-      "root",
-      state => state.nav,
-    );
-    
-const addListener = createReduxBoundAddListener("root");
+  "root",
+  state => state.nav,
+);
+
+const App = reduxifyNavigator(AppNavigator, "root");
+const mapStateToProps = (state) => ({
+  state: state.nav,
+});
+
+const AppWithNavigationState = connect(mapStateToProps)(App);
+
+const store = createStore(
+  appReducer,
+  applyMiddleware(middleware),
+);
 class RootNavigator extends Component {
-
-constructor (props) {
-    super(props)
-    // this.showExitAlert = this.showExitAlert.bind(this)
-  }
-
-  // componentDidMount () {
-  //   BackHandler.addEventListener('hardwareBackPress', this.showExitAlert)
-  // }
-
-  // componentWillUnmount () {
-  //   BackHandler.removeEventListener('hardwareBackPress', this.showExitAlert)
-  // }
-
-
-  // showExitAlert = () => {
-  //   const { dispatch, nav } = this.props
-  //   console.log('in else')
-  //   dispatch(NavigationActions.back())
-  //   return nav !== this.props.nav
-    
-  // }
-
-
   render() {
-    const { dispatch, nav } = this.props;
-    console.log("from main index" , this.props)
     return (
-    
-    //if user is loggedIn
-    <Navigator
-          navigation={addNavigationHelpers({
-          dispatch,
-          state: nav,
-          addListener
-          })}
-          /> 
+      <Provider store={store}>
+        <AppWithNavigationState />
+      </Provider>
     );
   }
 }
 
-RootNavigator.propTypes = {
-  nav: PropTypes.object.isRequired,
-  dispatch: PropTypes.func.isRequired,
-};
 
-const mapStateToProps = (state) => ({
-  nav : state.nav
-});
+// const mapStateToProps = (state) => ({
+//   nav: state.nav
+// });
 
-export default connect(mapStateToProps)(RootNavigator);
+export default connect(mapStateToProps)(App);
