@@ -4,7 +4,7 @@ import Splash from '../../src/components/splash/splash'
 
 
 
-export default Navigator = createStackNavigator({
+export default AppNavigator = createStackNavigator({
   SplashScreen: {
     screen: Splash,
     navigationOptions : {

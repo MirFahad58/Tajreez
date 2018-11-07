@@ -1,37 +1,17 @@
 import React, { Component } from 'react';
-import { connect,Provider } from 'react-redux';
-import PropTypes from 'prop-types';
-import {
-  createStackNavigator,
-} from 'react-navigation';
+import { connect, Provider } from 'react-redux';
+import { SafeAreaView } from 'react-native';
 import {
   createStore,
   applyMiddleware,
-  combineReducers,
 } from 'redux';
 import {
   reduxifyNavigator,
   createReactNavigationReduxMiddleware,
-  createNavigationReducer,
 } from 'react-navigation-redux-helpers';
-import Splash from './components/splash/splash';
+import AppNavigator from './navigation/Navigator';
+import appReducer from './reducers/index'
 
-// import navReducer from './reducer'
-
-
-const AppNavigator = createStackNavigator({
-  SplashScreen: {
-    screen: Splash,
-    navigationOptions : {
-      header : null
-    }
-  }
-});
-
-const navReducer = createNavigationReducer(AppNavigator);
-const appReducer = combineReducers({
-  nav: navReducer
-});
 
 const middleware = createReactNavigationReduxMiddleware(
   "root",
@@ -54,7 +34,9 @@ export default class Root extends Component {
     );
     return (
       <Provider store={store}>
-        <AppWithNavigationState />
+        <SafeAreaView style={{ flex: 1 }}>
+          <AppWithNavigationState />
+        </SafeAreaView>
       </Provider>
     );
   }

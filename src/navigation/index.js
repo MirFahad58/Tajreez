@@ -17,16 +17,10 @@ import {
 } from 'react-navigation-redux-helpers';
 import Splash from '../components/splash/splash';
 // import navReducer from './reducer'
+// import AppNavigator from '../navigation/index'
 
+import appReducer from '../reducers/index'
 
-const AppNavigator = createStackNavigator({
-  SplashScreen: {
-    screen: Splash,
-    navigationOptions : {
-      header : null
-    }
-  }
-});
 
 const navReducer = createNavigationReducer(AppNavigator);
 const appReducer = combineReducers({
