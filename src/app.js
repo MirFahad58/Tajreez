@@ -1,43 +1,61 @@
-import React from 'react';
-import { StyleSheet, Text, View, I18nManager } from 'react-native';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
-// import i18n from './src/i18n/i18n'
-import { Provider } from 'react-redux'
-import ReduxThunk from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
-import reducer from './reducers'
-import RootNavigator from './navigation'
+import React, { Component } from 'react';
+import { connect,Provider } from 'react-redux';
+import PropTypes from 'prop-types';
+import {
+  createStackNavigator,
+} from 'react-navigation';
+import {
+  createStore,
+  applyMiddleware,
+  combineReducers,
+} from 'redux';
+import {
+  reduxifyNavigator,
+  createReactNavigationReduxMiddleware,
+  createNavigationReducer,
+} from 'react-navigation-redux-helpers';
+import Splash from './components/splash/splash';
+
+// import navReducer from './reducer'
 
 
-export class App extends React.Component {
-
-  constructor() {
-    super()
+const AppNavigator = createStackNavigator({
+  SplashScreen: {
+    screen: Splash,
+    navigationOptions : {
+      header : null
+    }
   }
-  componentDidMount() {
-  }
+});
+
+const navReducer = createNavigationReducer(AppNavigator);
+const appReducer = combineReducers({
+  nav: navReducer
+});
+
+const middleware = createReactNavigationReduxMiddleware(
+  "root",
+  state => state.nav,
+);
+
+const App = reduxifyNavigator(AppNavigator, "root");
+const mapStateToProps = (state) => ({
+  state: state.nav,
+});
+
+const AppWithNavigationState = connect(mapStateToProps)(App);
+
+
+export default class Root extends Component {
   render() {
-    const store = createStore(reducer, {}, applyMiddleware(ReduxThunk))
+    const store = createStore(
+      appReducer,
+      applyMiddleware(middleware),
+    );
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <RootNavigator />
-        </View>
+        <AppWithNavigationState />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderRadius: 4,
-    borderStyle: 'solid',
-  }
-});
-
-
-
-export default App;
-
-// export {MainScreenNavigator}

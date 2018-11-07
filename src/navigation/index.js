@@ -49,7 +49,7 @@ const store = createStore(
   appReducer,
   applyMiddleware(middleware),
 );
-class RootNavigator extends Component {
+class Root extends Component {
   render() {
     return (
       <Provider store={store}>
@@ -64,4 +64,4 @@ class RootNavigator extends Component {
 //   nav: state.nav
 // });
 
-export default connect(mapStateToProps)(App);
+// export default connect(mapStateToProps)(App);
