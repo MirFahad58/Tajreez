@@ -15,5 +15,5 @@ export default class Root extends Component {
         </SafeAreaView>
       </Provider>
     );
-  }
+  };
 }
