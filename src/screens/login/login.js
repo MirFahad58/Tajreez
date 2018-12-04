@@ -14,7 +14,7 @@ class Login extends Component {
     return (
       <ImageBackground
         style={{
-          flex: 1, justifyContent: 'center', flexDirection: 'column', alignContent: 'center',
+          flex: 1, justifyContent: 'center', flexDirection: 'column', alignContent: 'center'
         }}
         source={require('../../assets/background.png')}
       >
@@ -22,6 +22,7 @@ class Login extends Component {
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
             <Image
+              resizeMode='contain'
               style={{ flex: 0.5, justifyContent: 'center', alignSelf: 'center' }}
               source={require('../../assets/logo.png')}
             />
