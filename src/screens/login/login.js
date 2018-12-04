@@ -18,6 +18,7 @@ class Login extends Component {
         }}
         source={require('../../assets/background.png')}
       >
+
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
             <Image
