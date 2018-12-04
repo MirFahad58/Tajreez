@@ -1,31 +1,29 @@
+/* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  Text, View, ImageBackground, Image, TextInput,
+  View, ImageBackground, Image, TextInput,
 } from 'react-native';
 import Button from '../../common/Button/Button';
-import { TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, ForgetPasswordArea, ForgetPassword } from './style';
+import {
+  TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, ForgetPasswordArea, ForgetPassword,
+} from './style';
 
 
 class Login extends Component {
-  constructor({ }) {
-    super();
-  }
-
   render() {
     return (
       <ImageBackground
         style={{
-          flex: 1, justifyContent: 'center', flexDirection: 'column', alignContent: 'center'
+          flex: 1, justifyContent: 'center', flexDirection: 'column', alignContent: 'center',
         }}
         source={require('../../assets/background.png')}
       >
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
             <Image
-              resizeMode='contain'
+              resizeMode="contain"
               style={{ flex: 0.5, justifyContent: 'center', alignSelf: 'center' }}
               source={require('../../assets/logo.png')}
-              resizeMode="contain"
             />
             <TextView>
               <TextInput
@@ -48,7 +46,7 @@ class Login extends Component {
               <TextInput
                 placeholder="Password"
                 textContentType="password"
-                secureTextEntry={true}
+                secureTextEntry
                 placeholderTextColor="grey"
                 autoCorrect={false}
                 style={{
