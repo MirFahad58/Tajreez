@@ -29,7 +29,7 @@ class Login extends Component {
             <View style={{ flex: 0.2, paddingHorizontal: 25, paddingVertical: 10 }}>
               <TextInput
                 placeholder="Email Address"
-                autoCorrect="false"
+                autoCorrect={false}
                 placeholderTextColor="grey"
                 textContentType="username"
                 autoCapitalize="none"
@@ -47,9 +47,9 @@ class Login extends Component {
               <TextInput
                 placeholder="Password"
                 textContentType="password"
-                secureTextEntry="true"
+                secureTextEntry={true}
                 placeholderTextColor="grey"
-                autoCorrect="false"
+                autoCorrect={false}
                 style={{
                   height: 50,
                   backgroundColor: 'white',
