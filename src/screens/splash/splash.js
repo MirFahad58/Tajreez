@@ -18,9 +18,6 @@ class Splash extends Component {
           <View style={{flex:.3 ,  backgroundColor:'yellow'}}>
 
           </View>
-          <View style={{flex:.3 ,  backgroundColor:'green'}}>
-
-          </View>
         </View>
     );
   }
