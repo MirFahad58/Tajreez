@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
-import Splash from '../screens/splash/splash';
+import Login from '../screens/login/login';
 
 
 
@@ -7,7 +7,7 @@ import Splash from '../screens/splash/splash';
 
 export default AppNavigator = createStackNavigator({
   SplashScreen: {
-    screen: Splash,
+    screen: Login,
     navigationOptions : {
       header : null
     }
