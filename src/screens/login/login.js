@@ -3,6 +3,7 @@ import {
   Text, View, ImageBackground, Image, TextInput,
 } from 'react-native';
 import Button from '../../common/Button/Button';
+import { TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, ForgetPasswordArea, ForgetPassword } from './style';
 
 
 class Login extends Component {
@@ -26,7 +27,7 @@ class Login extends Component {
               source={require('../../assets/logo.png')}
               resizeMode="contain"
             />
-            <View style={{ flex: 0.2, paddingHorizontal: 25, paddingVertical: 10 }}>
+            <TextView>
               <TextInput
                 placeholder="Email Address"
                 autoCorrect={false}
@@ -42,8 +43,8 @@ class Login extends Component {
                 }}
               />
 
-            </View>
-            <View style={{ flex: 0.2, paddingHorizontal: 25, paddingVertical: 10 }}>
+            </TextView>
+            <TextView>
               <TextInput
                 placeholder="Password"
                 textContentType="password"
@@ -59,52 +60,37 @@ class Login extends Component {
                 }}
               />
 
-            </View>
-            <View style={{ flex: 0.1, paddingHorizontal: 25, paddingVertical: 10 }}>
+            </TextView>
+            <LoginButton>
               <Button buttonText="LOGIN" />
-            </View>
+            </LoginButton>
           </View>
 
         </View>
 
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
-            <View style={{
-              flex: 0.2, flexDirection: 'row', justifyContent: 'flex-start', alignSelf: 'center', marginTop: 20, backgroundColor: 'transparent',
-            }}
-            >
-              <Text style={{
-                fontSize: 16, fontWeight: '600', color: 'white', marginTop: 20,
-              }}
-              >
+            <ForgetPasswordArea>
+              <ForgetPassword>
                 Forgot your password?
-              </Text>
-              <Text style={{
-                fontSize: 16, fontWeight: '900', color: 'white', marginTop: 20,
-              }}
-              >
+              </ForgetPassword>
+              <ForgetPassword>
                 {' '}
                 Click Here
-              </Text>
-            </View>
+              </ForgetPassword>
+            </ForgetPasswordArea>
 
-            <View style={{
-              flex: 0.5, justifyContent: 'flex-end', alignSelf: 'center', backgroundColor: 'transparent', marginBottom: 20,
-            }}
-            >
-              <Text style={{ fontSize: 15, fontWeight: '700', color: 'white' }}>Need an account?</Text>
-            </View>
+            <NeedAnAccountArea>
+              <AccountText>Need an account?</AccountText>
+            </NeedAnAccountArea>
 
-            <View style={{ flex: 0.2, justifyContent: 'flex-end', paddingHorizontal: 25 }}>
+            <RegisterButton>
               <Button buttonText="REGISTER" />
-            </View>
+            </RegisterButton>
 
-            <View style={{
-              flex: 0.1, justifyContent: 'flex-end', alignSelf: 'center', paddingVertical: 22, backgroundColor: 'transparent',
-            }}
-            >
-              <Text style={{ fontSize: 16, fontWeight: '900', color: 'white' }}>CONTINUE AS A GUEST</Text>
-            </View>
+            <ContinueAsGuestArea>
+              <ContinueText>CONTINUE AS A GUEST</ContinueText>
+            </ContinueAsGuestArea>
           </View>
 
         </View>
