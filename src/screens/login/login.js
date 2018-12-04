@@ -18,12 +18,12 @@ class Login extends Component {
         }}
         source={require('../../assets/background.png')}
       >
-
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
             <Image
               style={{ flex: 0.5, justifyContent: 'center', alignSelf: 'center' }}
               source={require('../../assets/logo.png')}
+              resizeMode="contain"
             />
             <View style={{ flex: 0.2, paddingHorizontal: 25, paddingVertical: 10 }}>
               <TextInput
@@ -76,14 +76,14 @@ class Login extends Component {
                 fontSize: 16, fontWeight: '600', color: 'white', marginTop: 20,
               }}
               >
-Forgot your password?
+                Forgot your password?
               </Text>
               <Text style={{
                 fontSize: 16, fontWeight: '900', color: 'white', marginTop: 20,
               }}
               >
                 {' '}
-Click Here
+                Click Here
               </Text>
             </View>
 
