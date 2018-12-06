@@ -7,10 +7,17 @@ import Button from '../../common/Button/Button';
 import {
   TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea,
 } from './style';
-
+import { StackActions, NavigationActions } from 'react-navigation';
 
 class Signup extends Component {
+
   render() {
+    const resetAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'HomeScreen' })]
+    });
+    const { navigation } = this.props
+
     return (
       <ImageBackground
         style={{
@@ -108,7 +115,7 @@ class Signup extends Component {
             </NeedAnAccountArea>
 
             <LoginButton>
-              <Button buttonText="LOGIN" />
+              <Button buttonText="LOGIN" onPress={() => navigation.dispatch(resetAction)} />
             </LoginButton>
 
             <ContinueAsGuestArea>
