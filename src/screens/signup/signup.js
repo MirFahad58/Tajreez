@@ -5,13 +5,12 @@ import {
 } from 'react-native';
 import Button from '../../common/Button/Button';
 import {
-  TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, ForgetPasswordArea, ForgetPassword,
+  TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea,
 } from './style';
 
 
-class Login extends Component {
+class Signup extends Component {
   render() {
-    
     return (
       <ImageBackground
         style={{
@@ -19,13 +18,29 @@ class Login extends Component {
         }}
         source={require('../../assets/background.png')}
       >
-        <View style={{ flex: 0.5 }}>
+        <View style={{ flex: 0.7 }}>
           <View style={{ flex: 1 }}>
             <Image
               resizeMode="contain"
-              style={{ flex: 0.5, justifyContent: 'center', alignSelf: 'center' }}
+              style={{ flex: 0.75, justifyContent: 'center', alignSelf: 'center' }}
               source={require('../../assets/logo.png')}
             />
+            <TextView>
+              <TextInput
+                placeholder="Full Name"
+                autoCorrect={false}
+                placeholderTextColor="grey"
+                autoCapitalize="words"
+                style={{
+                  height: 50,
+                  backgroundColor: 'white',
+                  paddingLeft: 15,
+                  borderColor: 'green',
+                  borderRadius: 3,
+                }}
+              />
+
+            </TextView>
             <TextView>
               <TextInput
                 placeholder="Email Address"
@@ -60,32 +75,41 @@ class Login extends Component {
               />
 
             </TextView>
-            <LoginButton>
-              <Button buttonText="LOGIN" />
-            </LoginButton>
+            <TextView>
+              <TextInput
+                placeholder="Confirm Password"
+                textContentType="password"
+                secureTextEntry
+                placeholderTextColor="grey"
+                autoCorrect={false}
+                style={{
+                  height: 50,
+                  backgroundColor: 'white',
+                  borderRadius: 3,
+                  borderColor: 'green',
+                  paddingLeft: 15,
+                }}
+              />
+
+            </TextView>
+            <RegisterButton>
+              <Button buttonText="REGISTER" />
+            </RegisterButton>
+
           </View>
 
         </View>
 
-        <View style={{ flex: 0.5 }}>
+        <View style={{ flex: 0.3 }}>
           <View style={{ flex: 1 }}>
-            <ForgetPasswordArea>
-              <ForgetPassword>
-                Forgot your password?
-              </ForgetPassword>
-              <ForgetPassword>
-                {' '}
-                Click Here
-              </ForgetPassword>
-            </ForgetPasswordArea>
 
             <NeedAnAccountArea>
-              <AccountText>Need an account?</AccountText>
+              <AccountText>Already have an account?</AccountText>
             </NeedAnAccountArea>
 
-            <RegisterButton>
-              <Button buttonText="REGISTER" />
-            </RegisterButton>
+            <LoginButton>
+              <Button buttonText="LOGIN" />
+            </LoginButton>
 
             <ContinueAsGuestArea>
               <ContinueText>CONTINUE AS A GUEST</ContinueText>
@@ -99,4 +123,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;

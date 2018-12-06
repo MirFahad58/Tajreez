@@ -1,1 +1,1 @@
-export const INITIAL_ROUTE = 'SplashScreen'
+export const INITIAL_ROUTE = 'LoginScreen'
