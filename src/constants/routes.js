@@ -1,1 +1,7 @@
-export const INITIAL_ROUTE = 'LoginScreen'
+import { Dimensions } from 'react-native'
+
+const { width } = Dimensions.get('screen')
+
+export const styles = {
+    drawerWidth: width / 2
+}

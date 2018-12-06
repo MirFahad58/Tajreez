@@ -11,7 +11,7 @@ import {
 
 class Login extends Component {
   render() {
-    
+    let { navigation } = this.props
     return (
       <ImageBackground
         style={{
@@ -84,7 +84,7 @@ class Login extends Component {
             </NeedAnAccountArea>
 
             <RegisterButton>
-              <Button buttonText="REGISTER" />
+              <Button buttonText="REGISTER" onPress={() => navigation.navigate('SignupScreen')} />
             </RegisterButton>
 
             <ContinueAsGuestArea>

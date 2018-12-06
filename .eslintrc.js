@@ -24,6 +24,7 @@ module.exports = {
     "no-use-before-define": 0,
     "linebreak-style": 0,
     "max-len": 0,
-    "import/no-unresolved" : 0
+    "import/no-unresolved" : 0,
+    "global-require" : 0
   },
   }

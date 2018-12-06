@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import Login from '../screens/login/login';
 import Signup from '../screens/signup/signup'
+import DrawerNavigator from './DrawerNavigator';
 
 
 
@@ -17,5 +18,15 @@ export default AppNavigator = createStackNavigator({
     navigationOptions : {
       header : null
     }
+  },
+  HomeScreen : {
+    screen : DrawerNavigator,
+    navigationOptions : {
+      header : null
+    }
   }
-});
+},
+{
+  initialRouteName : 'HomeScreen'
+}
+);
