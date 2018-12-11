@@ -6,9 +6,10 @@ import { HeaderComponent } from '../../common/Header/Header';
 
 class AboutUs extends Component {
   render() {
+    let { navigation } = this.props
     return (
       <View style={{ flex: 1, backgroundColor: 'red' }}>
-        <HeaderComponent />
+        <HeaderComponent showBackButton onPress={() => navigation.goBack()}/>
         <Text>ABOUT text here</Text>
       </View>
     );

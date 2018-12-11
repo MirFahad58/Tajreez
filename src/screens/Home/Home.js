@@ -11,7 +11,7 @@ class Home extends Component {
     let { navigation } = this.props;
     return (
       <View style={{ flex: 1 }}>
-        <HeaderComponent onPressMenu={() => navigation.openDrawer()} />
+        <HeaderComponent onPress={() => navigation.openDrawer()} />
         <GooglePlacesAutocomplete
           placeholder='Search'
           autoFocus={false}

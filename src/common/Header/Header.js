@@ -11,30 +11,39 @@ import {
 } from './style';
 
 
-export const HeaderComponent = ({ headerText, onPressMenu }) => (
+export const HeaderComponent = ({ headerText, onPress, showBackButton }) => (
   <HeaderView>
     <HeaderLeft theme={{ opacity: 1 }}>
-      <TouchableOpacity onPress={onPressMenu}>
-        <Image
-          resizeMode="contain"
-          source={require('../../assets/menu.png')}
-          style={{ width: 20, height: 20, tintColor: '#60a08e' }}
-        />
+      <TouchableOpacity onPress={onPress}>
+        {
+          showBackButton ?
+            <Image
+              resizeMode="contain"
+              source={require('../../assets/back.png')}
+              style={{ width: 20, height: 20, tintColor: '#60a08e' }}
+            />
+            :
+            <Image
+              resizeMode="contain"
+              source={require('../../assets/menu.png')}
+              style={{ width: 20, height: 20, tintColor: '#60a08e' }}
+            />
+        }
       </TouchableOpacity>
     </HeaderLeft>
     <HeaderTitle>
       <View>
         {
-                    headerText !== undefined
-                      ? <Text style={{ fontSize: 20, color: 'white', fontWeight: '500' }}>{headerText}</Text>
-                      : (
-                        <Image
-                          resizeMode="contain"
-                          source={require('../../assets/logo.png')}
-                          style={{ width: 70, height: 70, tintColor: '#60a08e' }}
-                        />
-                      )
-                }
+          headerText !== undefined
+            ? <Text style={{ fontSize: 20, color: 'white', fontWeight: '500' }}>{headerText}</Text>
+            : (
+              <Image
+                resizeMode="contain"
+                source={require('../../assets/logo.png')}
+                style={{ width: 70, height: 70, tintColor: '#60a08e' }}
+              />
+            )
+        }
       </View>
     </HeaderTitle>
     <HeaderRight>
@@ -47,9 +56,11 @@ export const HeaderComponent = ({ headerText, onPressMenu }) => (
 
 HeaderComponent.propTypes = {
   headerText: PropTypes.any,
-  onPressMenu: PropTypes.func,
+  onPress: PropTypes.func,
+  showBackButton: PropTypes.bool
 };
 HeaderComponent.defaultProps = {
   headerText: undefined,
-  onPressMenu: () => { },
+  onPress: () => { },
+  showBackButton: false
 };
