@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { styles } from '../../constants';
 import DrawerItem from '../../common/DrawerItem/DrawerItem';
-import { Div } from './style';
+import { Div, SecondTextView, TextStyle, ListView, ButtonArea, ButtonViewLogin, ButtonTextAreaRegister, ButtonTextAreaLogin, ButtonViewRegister } from './style';
 
 
 
@@ -29,27 +29,21 @@ class DrawerContent extends Component {
             source={require('../../assets/sidemenu.jpeg')}
           >
 
-            <View style={{ flex: 0.8, justifyContent: 'flex-end', alignContent: 'flex-start' }}>
-              <Text style={{
-                fontSize: 20, color: 'white', fontWeight: '900', marginLeft: 20,
-              }}
-              >
+            <FirstTextView>
+              <TextStyle>
                 Which car do
-              </Text>
-            </View>
-            <View style={{ justifyContent: 'flex-end', alignContent: 'flex-start' }}>
-              <Text style={{
-                fontSize: 20, color: 'white', fontWeight: '900', marginLeft: 20,
-              }}
-              >
+                </TextStyle>
+            </FirstTextView>
+            <SecondTextView>
+              <TextStyle>
                 you want to driver today?
-              </Text>
-            </View>
+              </TextStyle>
+            </SecondTextView>
           </ImageBackground>
         </View>
         <View style={{ flex: 0.7, backgroundColor: drawer.backgroundColor }}>
           <View style={{ flex: 1 }}>
-            <View style={{ flex: 0.8, paddingLeft: 20 }}>
+            <ListView>
               <View style={{ flex: 0.1, marginTop: 20 }} />
               <DrawerItem itemName={'My Booking'} />
               <DrawerItem itemName={'Payments'} />
@@ -58,23 +52,17 @@ class DrawerContent extends Component {
               <DrawerItem itemName={'Privacy Policy'} />
               <DrawerItem itemName={'Help'} />
               <DrawerItem itemName={'Contact Us'} />
-            </View>
+            </ListView>
 
-            <View style={{ flex: 0.2, flexDirection: 'row', marginHorizontal: 10 }}>
-              <View style={{
-                flex: 0.5, justifyContent: 'center', marginHorizontal: 10, marginVertical: 25, borderColor: 'white', borderWidth: 1
-              }}
-              >
-                <Text style={{ fontSize: 14, alignSelf: 'center', color: 'white', fontWeight: 'bold' }}>LOGIN</Text>
-              </View>
-              <View style={{
-                backgroundColor: '#ffdc69', flex: 0.5, justifyContent: 'center', marginHorizontal: 10, marginVertical: 25, borderColor: '#ffdc69', borderWidth: 1
-              }}
-              >
-                <Text style={{ fontSize: 14, alignSelf: 'center', color: 'black', fontWeight: 'bold' }}>REGISTER NOW</Text>
-              </View>
+            <ButtonArea>
+              <ButtonViewLogin>
+                <ButtonTextAreaLogin>LOGIN</ButtonTextAreaLogin>
+              </ButtonViewLogin>
+              <ButtonViewRegister>
+                <ButtonTextAreaRegister>REGISTER NOW</ButtonTextAreaRegister>
+              </ButtonViewRegister>
 
-            </View>
+            </ButtonArea>
           </View>
 
         </View>
