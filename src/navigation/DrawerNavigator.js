@@ -3,6 +3,8 @@ import { styles }  from '../constants'
 import DrawerContent from '../screens/DrawerContent/DrawerContent';
 import Home from '../screens/Home/Home';
 
+
+const { drawer } = styles
 const DrawerNavigator = createDrawerNavigator({
     HomeScreen: {
       screen: Home,
@@ -12,7 +14,7 @@ const DrawerNavigator = createDrawerNavigator({
     }
   }, {
     contentComponent: DrawerContent,
-    drawerWidth: styles.drawerWidth,    
+    drawerWidth: drawer.drawerWidth,    
     drawerPosition: 'left',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
