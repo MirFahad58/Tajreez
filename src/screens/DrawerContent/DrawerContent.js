@@ -1,38 +1,33 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, Text, ImageBackground,
+  View, ImageBackground,
 } from 'react-native';
 import { styles } from '../../constants';
 import DrawerItem from '../../common/DrawerItem/DrawerItem';
-import { Div, SecondTextView, TextStyle, ListView, ButtonArea, ButtonViewLogin, ButtonTextAreaRegister, ButtonTextAreaLogin, ButtonViewRegister } from './style';
-
+import {
+  FirstTextView, Div, SecondTextView, TextStyle, ListView, ButtonArea, ButtonViewLogin, ButtonTextAreaRegister, ButtonTextAreaLogin, ButtonViewRegister,
+} from './style';
 
 
 const { drawer } = styles;
 
 class DrawerContent extends Component {
-  componentWillMount() {
-    const { navigation } = this.props;
-    navigation.openDrawer()
-  }
   render() {
-    const { navigation } = this.props;
     return (
       <Div>
         <View style={{ flex: 0.3, backgroundColor: 'transparent' }}>
           <ImageBackground
             style={{
-              flex: 1, flexDirection: 'column'
+              flex: 1, flexDirection: 'column',
             }}
-            blurRadius={2}
+            blurRadius={4}
             source={require('../../assets/sidemenu.jpeg')}
           >
-
             <FirstTextView>
               <TextStyle>
                 Which car do
-                </TextStyle>
+              </TextStyle>
             </FirstTextView>
             <SecondTextView>
               <TextStyle>
@@ -45,15 +40,14 @@ class DrawerContent extends Component {
           <View style={{ flex: 1 }}>
             <ListView>
               <View style={{ flex: 0.1, marginTop: 20 }} />
-              <DrawerItem itemName={'My Booking'} />
-              <DrawerItem itemName={'Payments'} />
-              <DrawerItem itemName={'About Us'} />
-              <DrawerItem itemName={'Settings'} />
-              <DrawerItem itemName={'Privacy Policy'} />
-              <DrawerItem itemName={'Help'} />
-              <DrawerItem itemName={'Contact Us'} />
+              <DrawerItem itemName="My Booking" />
+              <DrawerItem itemName="Payments" />
+              <DrawerItem itemName="About Us" />
+              <DrawerItem itemName="Settings" />
+              <DrawerItem itemName="Privacy Policy" />
+              <DrawerItem itemName="Help" />
+              <DrawerItem itemName="Contact Us" />
             </ListView>
-
             <ButtonArea>
               <ButtonViewLogin>
                 <ButtonTextAreaLogin>LOGIN</ButtonTextAreaLogin>
@@ -61,12 +55,11 @@ class DrawerContent extends Component {
               <ButtonViewRegister>
                 <ButtonTextAreaRegister>REGISTER NOW</ButtonTextAreaRegister>
               </ButtonViewRegister>
-
             </ButtonArea>
           </View>
 
         </View>
-        </Div>
+      </Div>
     );
   }
 }
