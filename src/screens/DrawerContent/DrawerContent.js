@@ -3,17 +3,18 @@ import React, { Component } from 'react';
 import {
   View, ImageBackground,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { styles } from '../../constants';
 import DrawerItem from '../../common/DrawerItem/DrawerItem';
 import {
   FirstTextView, Div, SecondTextView, TextStyle, ListView, ButtonArea, ButtonViewLogin, ButtonTextAreaRegister, ButtonTextAreaLogin, ButtonViewRegister,
 } from './style';
 
-
 const { drawer } = styles;
 
 class DrawerContent extends Component {
   render() {
+    const { navigation } = this.props;
     return (
       <Div>
         <View style={{ flex: 0.3, backgroundColor: 'transparent' }}>
@@ -41,8 +42,8 @@ class DrawerContent extends Component {
             <ListView>
               <View style={{ flex: 0.1, marginTop: 20 }} />
               <DrawerItem itemName="My Booking" />
-              <DrawerItem itemName="Payments" />
-              <DrawerItem itemName="About Us" />
+              <DrawerItem itemName="Payments" onPress={() => navigation.navigate('PaymentScreen')} />
+              <DrawerItem itemName="About Us" onPress={() => navigation.navigate('AboutUsScreen')} />
               <DrawerItem itemName="Settings" />
               <DrawerItem itemName="Privacy Policy" />
               <DrawerItem itemName="Help" />
@@ -63,5 +64,12 @@ class DrawerContent extends Component {
     );
   }
 }
+
+DrawerContent.propTypes = {
+  navigation: PropTypes.object,
+};
+DrawerContent.defaultProps = {
+  navigation: {},
+};
 
 export default DrawerContent;

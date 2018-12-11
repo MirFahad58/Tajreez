@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 
 export const HeaderView = styled.View`
-    backgroundColor:#D50636
+    backgroundColor:white
     alignItems:center
     shadowColor: #000
     shadowOpacity: 0.2

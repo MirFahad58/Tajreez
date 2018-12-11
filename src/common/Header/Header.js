@@ -18,7 +18,7 @@ export const HeaderComponent = ({ headerText, onPressMenu }) => (
         <Image
           resizeMode="contain"
           source={require('../../assets/menu.png')}
-          style={{ width: 20, height: 20, tintColor: 'green' }}
+          style={{ width: 20, height: 20, tintColor: '#60a08e' }}
         />
       </TouchableOpacity>
     </HeaderLeft>
@@ -31,7 +31,7 @@ export const HeaderComponent = ({ headerText, onPressMenu }) => (
                         <Image
                           resizeMode="contain"
                           source={require('../../assets/logo.png')}
-                          style={{ width: 50, height: 50 }}
+                          style={{ width: 70, height: 70, tintColor: '#60a08e' }}
                         />
                       )
                 }
