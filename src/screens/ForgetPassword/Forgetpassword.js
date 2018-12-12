@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 import Button from '../../common/Button/Button';
 import {
-  TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, ForgetPasswordArea, ForgetPassword,
+  TextView, LoginButton, RegisterButton, ContinueAsGuestArea, ContinueText, AccountText, NeedAnAccountArea, MessageView, MessageText,
 } from './style';
 
 
-class Login extends Component {
+class ForgetPassword extends Component {
   render() {
     const { navigation } = this.props;
     return (
@@ -26,28 +26,14 @@ class Login extends Component {
               style={{ flex: 0.5, justifyContent: 'center', alignSelf: 'center' }}
               source={require('../../assets/logo.png')}
             />
+            <MessageView>
+              <MessageText>
+              Please enter your email address to receive a reset password.
+              </MessageText>
+            </MessageView>
             <TextView>
               <TextInput
                 placeholder="Email Address"
-                autoCorrect={false}
-                placeholderTextColor="grey"
-                textContentType="username"
-                autoCapitalize="none"
-                style={{
-                  height: 50,
-                  backgroundColor: 'white',
-                  paddingLeft: 15,
-                  borderColor: 'green',
-                  borderRadius: 3,
-                }}
-              />
-
-            </TextView>
-            <TextView>
-              <TextInput
-                placeholder="Password"
-                textContentType="password"
-                secureTextEntry
                 placeholderTextColor="grey"
                 autoCorrect={false}
                 style={{
@@ -61,7 +47,7 @@ class Login extends Component {
 
             </TextView>
             <LoginButton>
-              <Button buttonText="LOGIN" />
+              <Button buttonText="SUBMIT" />
             </LoginButton>
           </View>
 
@@ -69,22 +55,13 @@ class Login extends Component {
 
         <View style={{ flex: 0.5 }}>
           <View style={{ flex: 1 }}>
-            <ForgetPasswordArea>
-              <ForgetPassword>
-                Forgot your password?
-              </ForgetPassword>
-              <ForgetPassword onPress={() => navigation.navigate('ForgetPasswordScreen')}>
-                {' '}
-                Click Here
-              </ForgetPassword>
-            </ForgetPasswordArea>
-
+            <NeedAnAccountArea />
             <NeedAnAccountArea>
-              <AccountText>Need an account?</AccountText>
+              <AccountText>Already have an account?</AccountText>
             </NeedAnAccountArea>
 
             <RegisterButton>
-              <Button buttonText="REGISTER" onPress={() => navigation.navigate('SignupScreen')} />
+              <Button buttonText="LOGIN" onPress={() => navigation.navigate('LoginScreen')} />
             </RegisterButton>
 
             <ContinueAsGuestArea>
@@ -99,4 +76,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default ForgetPassword;

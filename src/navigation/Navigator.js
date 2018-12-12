@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 import Login from '../screens/login/login';
 import Signup from '../screens/signup/signup'
+import ForgetPassword from '../screens/ForgetPassword/Forgetpassword'
 import DrawerNavigator from './DrawerNavigator';
 
 
@@ -19,6 +20,12 @@ export default AppNavigator = createStackNavigator({
       header : null
     }
   },
+  ForgetPasswordScreen: {
+    screen: ForgetPassword,
+    navigationOptions : {
+      header : null
+    }
+  },
   HomeScreen : {
     screen : DrawerNavigator,
     navigationOptions : {
@@ -27,6 +34,6 @@ export default AppNavigator = createStackNavigator({
   }
 },
 {
-  initialRouteName : 'HomeScreen'
+  initialRouteName : 'ForgetPasswordScreen'
 }
 );
