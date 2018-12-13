@@ -25,6 +25,7 @@ module.exports = {
     "linebreak-style": 0,
     "max-len": 0,
     "import/no-unresolved" : 0,
-    "global-require" : 0
+    "global-require" : 0,
+    "no-undef" : 0
   },
   }
