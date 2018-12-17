@@ -19,6 +19,9 @@ export default AppNavigator = createStackNavigator({
   HomeScreen: {
     screen: DrawerNavigator,
   },
+  AboutUsScreen: {
+    screen: DrawerNavigator,
+  },
 },
 {
   initialRouteName: 'LoginScreen',
