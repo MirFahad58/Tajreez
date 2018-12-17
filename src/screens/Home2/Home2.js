@@ -65,12 +65,12 @@ class Home2 extends Component {
                                 </View>
                                 <View style={{ flex: .6, marginVertical: 7, flexDirection: 'column', justifyContent: 'center' }}>
                                     <Text> 8 / 10</Text>
-                                    {/* <StarRating
+                                    <StarRating
                                         disabled={false}
                                         maxStars={5}
                                         rating={this.state.starCount}
                                         selectedStar={(rating) => { }}
-                                    /> */}
+                                    />
                                 </View>
                                 <View style={{ flex: .2, backgroundColor: 'pink', marginVertical: 7 }}>
                                 </View>
