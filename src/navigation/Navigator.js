@@ -20,12 +20,9 @@ export default AppNavigator = createStackNavigator({
   HomeScreen: {
     screen: DrawerNavigator,
   },
-  PaymentsScreen: {
-    screen: Payments,
-  },
 },
 {
-  initialRouteName: 'PaymentsScreen',
+  initialRouteName: 'HomeScreen',
   headerMode: 'none',
   transitionConfig: TransitionConfig,
 });
