@@ -4,6 +4,7 @@ import AboutUs from '../screens/AboutUs/AboutUs';
 import Payments from '../screens/Payments/Payments';
 import DrawerConfig from './DrawerConfig';
 import TransitionConfig from './TransitionConfig';
+import CarListing from '../screens/CarListing/CarListing';
 
 const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
@@ -28,6 +29,12 @@ const DrawerNavigator = createDrawerNavigator({
       },
       AboutUsScreen: {
         screen: AboutUs,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      CarListingScreen: {
+        screen: CarListing,
         navigationOptions: {
           header: null,
         },

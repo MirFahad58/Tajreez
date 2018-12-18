@@ -1,10 +1,10 @@
 import { createStackNavigator } from 'react-navigation';
 import Login from '../screens/login/login';
 import Signup from '../screens/signup/signup';
+import Payments from  '../screens/Payments/Payments'
 import ForgetPassword from '../screens/ForgetPassword/Forgetpassword';
 import DrawerNavigator from './DrawerNavigator';
 import TransitionConfig from './TransitionConfig';
-import AboutUs from '../screens/AboutUs/AboutUs';
 
 
 export default AppNavigator = createStackNavigator({
@@ -19,7 +19,7 @@ export default AppNavigator = createStackNavigator({
   },
   HomeScreen: {
     screen: DrawerNavigator,
-  },
+  }
 },
 {
   initialRouteName: 'HomeScreen',
