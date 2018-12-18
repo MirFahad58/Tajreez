@@ -14,13 +14,16 @@ class Home extends Component {
     super();
     this.state = {
       toggleBottom: 0,
-      date: '2016-05-15',
       isUnderAge: false,
+      fromDate: '2016-05-15',
+      fromTime: '2016-05-15',
+      toDate: '2016-05-15',
+      toTime: '2016-05-15',
       isReturnToSameLocation: false,
     };
   }
 
-  onChangeBottomToggle = (value) => {
+  onChangeUnderAgeToggle = (value) => {
     if (value) {
       this.setState({ isUnderAge: value });
     } else {
@@ -138,6 +141,7 @@ class Home extends Component {
                     date="2018-12-12"
                     mode="date"
                     showIcon={false}
+                    date={this.state.fromDate}
                     placeholder="select date"
                     format="DD MMM, ddd"
                     minDate="2018-12-01"
@@ -146,9 +150,10 @@ class Home extends Component {
                     customStyles={{
                       dateInput: {
                         borderWidth: 0,
+                        alignItems: 'flex-start',
                       },
                     }}
-                    onDateChange={(date) => { this.setState({ date }); }}
+                    onDateChange={(date) => { this.setState({ fromDate: date }); }}
                   />
                 </View>
 
@@ -162,6 +167,7 @@ class Home extends Component {
                     style={{ width: '100%' }}
                     date="2018-12-12"
                     mode="date"
+                    date={this.state.toDate}
                     showIcon={false}
                     placeholder="select date"
                     format="DD MMM, ddd"
@@ -170,17 +176,24 @@ class Home extends Component {
                     customStyles={{
                       dateInput: {
                         borderWidth: 0,
+                        alignItems: 'flex-start',
                       },
                     }}
                     cancelBtnText="Cancel"
-                    onDateChange={(date) => { this.setState({ date }); }}
+                    onDateChange={(date) => { this.setState({ toDate: date }); }}
                   />
                 </View>
 
               </View>
 
             </View>
-            <View style={{ flex: 0.2 }} />
+            <View style={{ flex: 0.2, justifyContent:'center' , alignItems:'center' }}>
+            <Image
+                  resizeMode="contain"
+                  style={{ flex: 1, width: 60, height: 60 }}
+                  source={require('../../assets/fromto.png')}
+                />
+            </View>
             <View style={{ flex: 0.4 }}>
               <View style={{ flex: 1, flexDirection: 'column' }}>
                 <View style={{ flex: 0.2, alignItems: 'flex-end' }}>
@@ -200,17 +213,19 @@ class Home extends Component {
                     showIcon={false}
                     placeholder="Select Time"
                     format="LT"
+                    date={this.state.fromTime}
                     confirmBtnText="Confirm"
                     cancelBtnText="Cancel"
                     customStyles={{
                       dateInput: {
                         borderWidth: 0,
+                        alignItems: 'flex-end',
                       },
                       dateText: {
                         position: 'absolute',
                       },
                     }}
-                    onDateChange={(date) => { this.setState({ date }); }}
+                    onDateChange={(time) => { this.setState({ fromTime: time }); }}
                   />
                 </View>
 
@@ -225,6 +240,7 @@ class Home extends Component {
                     date="2018-12-12"
                     mode="time"
                     showIcon={false}
+                    date={this.state.toTime}
                     placeholder="Select Time"
                     format="LT"
                     confirmBtnText="Confirm"
@@ -232,9 +248,10 @@ class Home extends Component {
                     customStyles={{
                       dateInput: {
                         borderWidth: 0,
+                        alignItems: 'flex-end',
                       },
                     }}
-                    onDateChange={(date) => { this.setState({ date }); }}
+                    onDateChange={(time) => { this.setState({ toTime: time }); }}
                   />
                 </View>
 
@@ -249,7 +266,7 @@ class Home extends Component {
           }}
           >
             <Text style={{ color: 'grey', fontSize: 16 }}>Are you under 21 years old</Text>
-            <Switch value={this.isUnderAge} onValueChange={this.onChangeBottomToggle.bind(this.value)} />
+            <Switch value={this.state.isUnderAge} onValueChange={this.onChangeUnderAgeToggle.bind(this)} />
           </View>
           <View style={{ flex: 0.75, paddingTop: 20 }}>
             <Button buttonText="SEARCH NOW" onPress={() => navigation.navigate('SignupScreen')} />

@@ -35,7 +35,7 @@ export const HeaderComponent = ({ headerText, onPress, showBackButton }) => (
       <View>
         {
           headerText !== undefined
-            ? <Text style={{ fontSize: 20, color: 'white', fontWeight: '500' }}>{headerText}</Text>
+            ? <Text style={{ fontSize: 20, color: 'green', fontWeight: '500' }}>{headerText}</Text>
             : (
               <Image
                 resizeMode="contain"
