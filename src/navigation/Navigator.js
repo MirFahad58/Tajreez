@@ -4,6 +4,7 @@ import Signup from '../screens/signup/signup';
 import ForgetPassword from '../screens/ForgetPassword/Forgetpassword';
 import DrawerNavigator from './DrawerNavigator';
 import TransitionConfig from './TransitionConfig';
+import AboutUs from '../screens/AboutUs/AboutUs';
 
 
 export default AppNavigator = createStackNavigator({
@@ -20,11 +21,11 @@ export default AppNavigator = createStackNavigator({
     screen: DrawerNavigator,
   },
   AboutUsScreen: {
-    screen: DrawerNavigator,
+    screen: AboutUs,
   },
 },
 {
-  initialRouteName: 'LoginScreen',
+  initialRouteName: 'AboutUsScreen',
   headerMode: 'none',
   transitionConfig: TransitionConfig,
 });
