@@ -2,6 +2,7 @@ import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
 import Home from '../screens/Home/Home';
 import AboutUs from '../screens/AboutUs/AboutUs';
 import Payments from '../screens/Payments/Payments';
+import Privacy from '../screens/Privacy/Privacy';
 import DrawerConfig from './DrawerConfig';
 import TransitionConfig from './TransitionConfig';
 import CarListing from '../screens/CarListing/CarListing';
@@ -23,6 +24,12 @@ const DrawerNavigator = createDrawerNavigator({
       },
       PaymentScreen: {
         screen: Payments,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      PrivacyScreen: {
+        screen: Privacy,
         navigationOptions: {
           header: null,
         },
