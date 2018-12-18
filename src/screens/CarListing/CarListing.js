@@ -14,6 +14,7 @@ class CarListing extends Component {
         <HeaderComponent showBackButton onPress={() => navigation.goBack()} headerText="Car detail" />
         <FlatList
           data={[{ key: 'a' }, { key: 'b' }, { key: 'd' }]}
+          numColumns={1}
           renderItem={({ item }) => <CarItem item={item} />}
         />
       </View>

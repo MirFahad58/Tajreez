@@ -12,7 +12,8 @@ class Payments extends Component {
       <View style={{ flex: 1 }}>
         <HeaderComponent showBackButton onPress={() => navigation.goBack()} headerText={'Payments'} />
         <FlatList
-          data={[{ key: 'a' }, { key: 'b' } , { key: 'd' }]}
+          data={[{ key: 'a' }, { key: 'b' } , { key: 'd' }, { key: 'e' },{ key: 'f' },{ key: 'g' },{ key: 'h' }]}
+          numColumns={1}
           renderItem={({ item }) => <PaymentItem item={item} />}
         />
       </View>

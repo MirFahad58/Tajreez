@@ -11,7 +11,7 @@ const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
       HomeScreen: {
-        screen: Payments,
+        screen: Home,
         navigationOptions: {
           header: null,
         },
