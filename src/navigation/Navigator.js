@@ -5,7 +5,6 @@ import Payments from  '../screens/Payments/Payments'
 import ForgetPassword from '../screens/ForgetPassword/Forgetpassword';
 import DrawerNavigator from './DrawerNavigator';
 import TransitionConfig from './TransitionConfig';
-import CarListing from '../screens/CarListing/CarListing';
 
 
 export default AppNavigator = createStackNavigator({

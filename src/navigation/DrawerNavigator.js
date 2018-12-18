@@ -6,7 +6,6 @@ import DrawerConfig from './DrawerConfig';
 import TransitionConfig from './TransitionConfig';
 import CarListing from '../screens/CarListing/CarListing';
 
-
 const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
@@ -24,6 +23,12 @@ const DrawerNavigator = createDrawerNavigator({
       },
       PaymentScreen: {
         screen: Payments,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      AboutUsScreen: {
+        screen: AboutUs,
         navigationOptions: {
           header: null,
         },
