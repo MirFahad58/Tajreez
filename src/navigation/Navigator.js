@@ -20,12 +20,9 @@ export default AppNavigator = createStackNavigator({
   HomeScreen: {
     screen: DrawerNavigator,
   },
-  AboutUsScreen: {
-    screen: AboutUs,
-  },
 },
 {
-  initialRouteName: 'AboutUsScreen',
+  initialRouteName: 'HomeScreen',
   headerMode: 'none',
   transitionConfig: TransitionConfig,
 });
