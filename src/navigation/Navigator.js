@@ -20,13 +20,10 @@ export default AppNavigator = createStackNavigator({
   },
   HomeScreen: {
     screen: DrawerNavigator,
-  },
-  PrivacyScreen: {
-    screen: Privacy,
-  },
+  }
 },
 {
-  initialRouteName: 'PrivacyScreen',
+  initialRouteName: 'HomeScreen',
   headerMode: 'none',
   transitionConfig: TransitionConfig,
 });

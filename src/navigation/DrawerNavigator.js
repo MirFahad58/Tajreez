@@ -5,13 +5,13 @@ import Payments from '../screens/Payments/Payments';
 import Privacy from '../screens/Privacy/Privacy';
 import DrawerConfig from './DrawerConfig';
 import TransitionConfig from './TransitionConfig';
-
+import CarListing from '../screens/CarListing/CarListing';
 
 const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
       HomeScreen: {
-        screen: Payments,
+        screen: Home,
         navigationOptions: {
           header: null,
         },
@@ -30,6 +30,18 @@ const DrawerNavigator = createDrawerNavigator({
       },
       PrivacyScreen: {
         screen: Privacy,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      AboutUsScreen: {
+        screen: AboutUs,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      CarListingScreen: {
+        screen: CarListing,
         navigationOptions: {
           header: null,
         },
