@@ -45,7 +45,7 @@ class DrawerContent extends Component {
               <DrawerItem itemName="Payments" onPress={() => navigation.navigate('PaymentScreen')} />
               <DrawerItem itemName="About Us" onPress={() => navigation.navigate('AboutUsScreen')} />
               <DrawerItem itemName="Settings" />
-              <DrawerItem itemName="Privacy Policy" />
+              <DrawerItem itemName="Privacy Policy" onPress={() => navigation.navigate('PrivacyScreen')}/>
               <DrawerItem itemName="Help" />
               <DrawerItem itemName="Contact Us" />
             </ListView>
