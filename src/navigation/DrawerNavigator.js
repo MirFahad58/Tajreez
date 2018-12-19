@@ -16,7 +16,7 @@ const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
       HomeScreen: {
-        screen: CarDetailNavigator,
+        screen: Home,
         navigationOptions: {
           header: null,
         },
