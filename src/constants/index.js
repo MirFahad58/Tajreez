@@ -6,5 +6,6 @@ export const styles = {
     drawer : {
         backgroundColor : '#323232',
         drawerWidth: width * 0.8
-    }
+    },
+    green : '#60a08e'
 }

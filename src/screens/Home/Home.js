@@ -8,6 +8,7 @@ import DatePicker from 'react-native-datepicker';
 import { HeaderComponent } from '../../common/Header/Header';
 import ModalView from '../../common/Modal/Modal';
 import Button from '../../common/Button/Button';
+import { styles } from '../../constants';
 
 class Home extends Component {
   constructor() {
@@ -113,7 +114,7 @@ class Home extends Component {
             }}
             >
               <Text style={{ color: 'grey', fontSize: 16 }}>Return to same location</Text>
-              <Switch value={isReturnToSameLocation} onValueChange={this.onChangeLocationToggle.bind(this)} />
+              <Switch  trackColor={styles.green} value={isReturnToSameLocation} onValueChange={this.onChangeLocationToggle.bind(this)} />
             </View>
           </View>
 
@@ -266,10 +267,10 @@ class Home extends Component {
           }}
           >
             <Text style={{ color: 'grey', fontSize: 16 }}>Are you under 21 years old</Text>
-            <Switch value={this.state.isUnderAge} onValueChange={this.onChangeUnderAgeToggle.bind(this)} />
+            <Switch trackColor={styles.green} value={this.state.isUnderAge} onValueChange={this.onChangeUnderAgeToggle.bind(this)} />
           </View>
           <View style={{ flex: 0.75, paddingTop: 20 }}>
-            <Button buttonText="SEARCH NOW" onPress={() => navigation.navigate('SignupScreen')} />
+            <Button buttonText="SEARCH NOW" onPress={() => {}} />
           </View>
 
         </View>
