@@ -32,7 +32,7 @@ class DrawerContent extends Component {
             </FirstTextView>
             <SecondTextView>
               <TextStyle>
-                you want to driver today?
+                you want to drive today?
               </TextStyle>
             </SecondTextView>
           </ImageBackground>
