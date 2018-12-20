@@ -17,7 +17,7 @@ class AboutInfo extends Component {
         <View style={{ flex: .4 }}>
           <AboutItem title={'Mileage / Kilometer'} description={'You rental includes unlimited free kilometers'} />
           <AboutItem title={'Age requirements'} description={'Minimum age limit for this car is 24'} />
-          <AboutItem title={'Pick up requirements'} description={'A Passport is required'} />
+          <AboutItem showUnderLine={false} title={'Pick up requirements'} description={'A Passport is required'} />
         </View>
         <View style={{ flex: .2, justifyContent: 'center' }}>
           <View style={{ flex: 1, paddingTop: 20, justifyContent: 'center', marginHorizontal: 15 }}>

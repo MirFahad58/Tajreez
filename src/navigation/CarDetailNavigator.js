@@ -24,7 +24,7 @@ export default CarDetailNavigator = createMaterialTopTabNavigator({
     },
   }
   ,{
-    initialRouteName : 'AboutInfoScreen',
+    initialRouteName : 'AboutCompanyScreen',
     navigationOptions : {
       headerStyle: {
         backgroundColor: "blue"

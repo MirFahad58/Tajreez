@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import Days from '../../../common/Days/Days';
 import AboutItem from '../../../common/AboutItem/AboutItem';
 import Button from '../../../common/Button/Button';
@@ -21,7 +21,7 @@ class AboutCompany extends Component {
 
           <View style={{flexDirection:'row'}}>
             <Text style={{fontSize:14,color:'grey'}}>Our customer rate this company as </Text>
-            <Text style={{fontSize:18,fontWeight:'bold'}}>Excellent</Text>  
+            <Text style={{fontSize:18,fontWeight:'bold' , bottom:3}}>Excellent</Text>  
           </View>
 
           <View style={{width:'50%',paddingTop:20}}>
@@ -39,6 +39,7 @@ class AboutCompany extends Component {
         <View style={{flex:0.5, backgroundColor:'white',marginVertical:10}}>
           <View style={{paddingVertical:20}}>
           <Text style={{color:'#008260',fontWeight:'bold',paddingHorizontal:20,paddingBottom:10}}>Opening times</Text>
+            <ScrollView>
             <Days showUnderLine={true} day={'Sunday'} time={'10:00-22:00'} />
             <Days showUnderLine={true} day={'Monday'} time={'10:00-22:00'} />
             <Days showUnderLine={true} day={'Tuesday'} time={'10:00-22:00'} />
@@ -46,6 +47,7 @@ class AboutCompany extends Component {
             <Days showUnderLine={true} day={'Thursday'} time={'10:00-22:00'} />
             <Days showUnderLine={true} day={'Friday'} time={'Official Holliday'} />
             <Days showUnderLine={false} day={'Saturday'} time={'Officail Holliday'} />
+            </ScrollView>
           </View>
         </View>
 
