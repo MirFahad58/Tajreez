@@ -23,9 +23,9 @@ class CarListing extends Component {
 }
 
 CarListing.propTypes = {
-  navigation: PropTypes.func,
+  navigation: PropTypes.any,
 };
 CarListing.defaultProps = {
-  navigation: () => { },
+  navigation: {},
 };
 export default CarListing;

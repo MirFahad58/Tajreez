@@ -30,6 +30,7 @@ class Login extends Component {
               <TextInput
                 placeholder="Email Address"
                 autoCorrect={false}
+                underlineColorAndroid={'white'}
                 placeholderTextColor="grey"
                 textContentType="username"
                 autoCapitalize="none"
@@ -48,6 +49,7 @@ class Login extends Component {
                 placeholder="Password"
                 textContentType="password"
                 secureTextEntry
+                underlineColorAndroid={'white'}
                 placeholderTextColor="grey"
                 autoCorrect={false}
                 style={{

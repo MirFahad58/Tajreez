@@ -282,7 +282,7 @@ class Home extends Component {
             <Switch value={this.state.isUnderAge} onValueChange={this.onChangeUnderAgeToggle.bind(this)} />
           </View>
           <View style={{ flex: 0.75, paddingTop: 20 }}>
-            <Button buttonText="SEARCH NOW" onPress={() => navigation.navigate('SignupScreen')} />
+            <Button buttonText="SEARCH NOW" onPress={() => navigation.navigate('LoadingScreen')} />
           </View>
 
         </View>

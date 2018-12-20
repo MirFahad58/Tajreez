@@ -10,13 +10,14 @@ import AboutCar from '../screens/CarDetail/AboutCar/AboutCar';
 import AboutCompany from '../screens/CarDetail/AboutCompany/AboutCompany';
 import AboutInfo from '../screens/CarDetail/AboutInfo/AboutInfo';
 import CarDetailNavigator from './CarDetailNavigator';
+import Loading from '../screens/Loading/Loading';
 
 
 const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
       HomeScreen: {
-        screen: Home,
+        screen: Loading,
         navigationOptions: {
           header: null,
         },
@@ -47,6 +48,12 @@ const DrawerNavigator = createDrawerNavigator({
       },
       CarListingScreen: {
         screen: CarListing,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      LoadingScreen: {
+        screen: Loading,
         navigationOptions: {
           header: null,
         },
