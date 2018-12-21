@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, Text, Image, Switch, TouchableWithoutFeedback
+  View, Text, Image, Switch, TouchableWithoutFeedback, BackHandler
 } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import DatePicker from 'react-native-datepicker';
@@ -11,8 +11,9 @@ import Button from '../../common/Button/Button';
 import { styles } from '../../constants';
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
     this.state = {
       toggleBottom: 0,
       isUnderAge: false,
@@ -23,6 +24,18 @@ class Home extends Component {
       isReturnToSameLocation: false,
       showPickUpModal: false
     };
+  }
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  handleBackButtonClick() {
+    this.props.navigation.goBack(null);
+    return true;
   }
 
   onChangeUnderAgeToggle = (value) => {

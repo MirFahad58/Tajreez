@@ -23,7 +23,7 @@ export default AppNavigator = createStackNavigator({
   }
 },
 {
-  initialRouteName: 'HomeScreen',
+  initialRouteName: 'LoginScreen',
   headerMode: 'none',
   transitionConfig: TransitionConfig,
 });

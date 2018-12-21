@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, ImageBackground, Image, TextInput,
+  View, ImageBackground, Image, TextInput, BackHandler
 } from 'react-native';
 import Button from '../../common/Button/Button';
 import {
@@ -10,6 +10,23 @@ import {
 
 
 class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+  }
+
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  }
+
+  handleBackButtonClick() {
+    this.props.navigation.goBack(null);
+    return true;
+  }
   render() {
     const { navigation } = this.props;
     return (
