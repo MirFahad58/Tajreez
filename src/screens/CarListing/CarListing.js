@@ -11,12 +11,6 @@ import PropTypes from 'prop-types';
 
 class CarListing extends Component {
 
-  componentDidMount = () => {
-    const { navigation } = this.props;
-  //   setTimeout(() => {
-  //     navigation.navigate('CarDetail')
-  // } , 2000)
-  }
   render() {
     const { navigation } = this.props;
     return (
@@ -25,7 +19,7 @@ class CarListing extends Component {
         <FlatList
           data={[{ key: 'a' }, { key: 'b' }, { key: 'd' }]}
           numColumns={1}
-          renderItem={({ item }) => <CarItem item={item} onPress={() =>  navigation.navigate('CarDetail')} />}
+          renderItem={({ item }) => <CarItem item={item} onPress={() => navigation.navigate('CarDetail')} />}
         />
       </View>
     );

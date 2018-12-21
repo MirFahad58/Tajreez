@@ -53,10 +53,10 @@ class AboutCompany extends Component {
 
         <View style={{flex:0.35, backgroundColor:'white'}}>
           <View style={{flex:1, paddingTop:10}}>
-            <View style={{flex:0.66}}>
+            <View style={{flex:0.55}}>
               <AboutItem showUnderLine={false} title={'Supplier location'} description={'Dubai Marina Mall, Lower Ground Floor, Dubai, U.A.E'} />
             </View>
-            <View style={{ flex: 0.33,marginHorizontal: 15,paddingTop:20 }}>
+            <View style={{ flex: 0.45,marginHorizontal: 15 , justifyContent:'center' }}>
               <Button buttonText="Book now" onPress={() => { }} />
             </View>
           </View>

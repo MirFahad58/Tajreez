@@ -15,6 +15,7 @@ class Loading extends Component {
         } , 2000)
     }
     render() {
+        const { navigation } = this.props;
         return (
             <View style={{ flex: 1, backgroundColor: 'white' }}>
                 <HeaderComponent showBackButton onPress={() => navigation.goBack()} headerText={'Marnina car'} />
