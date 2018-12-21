@@ -72,10 +72,11 @@ const CarItem = ({ onPress }) => (
               }}
               >
                 <Text style={{ right: 4 }}> 8 / 10</Text>
-                <View style={{ width: 30, top: 2 }}>
+                <View style={{ width: 100, top: 2 }}>
                   <StarRating
                     maxStars={5}
-                    fullStarColor="green"
+                    fullStarColor={'#008260'}
+                    emptyStarColor={'#d5e7e1'}
                     starSize={17}
                     disabled
                     rating={2}

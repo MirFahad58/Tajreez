@@ -34,6 +34,7 @@ class Signup extends Component {
             />
             <TextView>
               <TextInput
+                underlineColorAndroid={'white'}
                 placeholder="Full Name"
                 autoCorrect={false}
                 placeholderTextColor="grey"
@@ -50,6 +51,7 @@ class Signup extends Component {
             </TextView>
             <TextView>
               <TextInput
+              underlineColorAndroid={'white'}
                 placeholder="Email Address"
                 autoCorrect={false}
                 placeholderTextColor="grey"
@@ -68,6 +70,7 @@ class Signup extends Component {
             <TextView>
               <TextInput
                 placeholder="Password"
+                underlineColorAndroid={'white'}
                 textContentType="password"
                 secureTextEntry
                 placeholderTextColor="grey"
@@ -85,6 +88,7 @@ class Signup extends Component {
             <TextView>
               <TextInput
                 placeholder="Confirm Password"
+                underlineColorAndroid={'white'}
                 textContentType="password"
                 secureTextEntry
                 placeholderTextColor="grey"

@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 import React, { Component } from 'react';
 import {
-  View, Text, Image, Switch,
+  View, Text, Image, Switch, TouchableWithoutFeedback
 } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import DatePicker from 'react-native-datepicker';
@@ -21,6 +21,7 @@ class Home extends Component {
       toDate: '2016-05-15',
       toTime: '2016-05-15',
       isReturnToSameLocation: false,
+      showPickUpModal: false
     };
   }
 
@@ -42,29 +43,35 @@ class Home extends Component {
 
   render() {
     const { navigation } = this.props;
-    const { toggleBottom, isReturnToSameLocation } = this.state;
+    const { toggleBottom, isReturnToSameLocation, showPickUpModal } = this.state;
+    console.log("STATE IS" , showPickUpModal)
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <HeaderComponent onPress={() => navigation.openDrawer()} />
-        {/* <ModalView isVisible={false}>
-          <Text>Hello</Text>
+        <HeaderComponent onPress={() => navigation.openDrawer()} showMenuButton />
+        <ModalView isVisible={showPickUpModal}>
+          <HeaderComponent
+            onPress={() => navigation.openDrawer()}
+            headerRightText="Save"
+            headerText={''}
+            headerBackgroundColor={styles.green}
+          />
+          <GooglePlacesAutocomplete
+            placeholder="Search"
+            autoFocus={false}
+            returnKeyType="search"
+            listViewDisplayed="auto"
+            fetchDetails
+            onPress={(data, details = null) => {
+              console.log(data, details);
+            }}
+            query={{
+              key: 'AIzaSyDiJ0oGy0xy6mcrh0c318mtujMTn_ENrSc',
+              language: 'en',
+            }}
+            currentLocation
+            nearbyPlacesAPI="GoogleReverseGeocoding"
+          />
         </ModalView>
-        <GooglePlacesAutocomplete
-          placeholder='Search'
-          autoFocus={false}
-          returnKeyType={'search'}
-          listViewDisplayed='auto'
-          fetchDetails={true}
-          onPress={(data, details = null) => {
-            console.log(data, details);
-          }}
-          query={{
-            key: 'AIzaSyDiJ0oGy0xy6mcrh0c318mtujMTn_ENrSc',
-            language: 'en',
-          }}
-          currentLocation={true}
-          nearbyPlacesAPI='GoogleReverseGeocoding'
-        /> */}
         <View style={{ flex: 0.4, marginHorizontal: 20 }}>
 
           <View style={{ flex: 1 }}>
@@ -73,9 +80,11 @@ class Home extends Component {
               <Text style={{ top: 4, color: 'grey' }}> Search and find the best rental prices</Text>
             </View>
             <View style={{ flex: 0.4 }}>
-              <View style={{
-                backgroundColor: '#ebebeb', flex: 0.45, borderRadius: 10, flexDirection: 'row',
-              }}
+             <TouchableWithoutFeedback onPress={() => this.setState({ showPickUpModal : true})}>
+              <View
+                style={{
+                  backgroundColor: '#ebebeb', flex: 0.45, borderRadius: 10, flexDirection: 'row',
+                }}
               >
                 <View style={{ flex: 0.12, justifyContent: 'center', alignItems: 'center' }}>
                   <Image
@@ -87,25 +96,28 @@ class Home extends Component {
                 <View style={{ flex: 0.88, justifyContent: 'center' }}>
                   <Text style={{ fontSize: 18, color: 'grey' }}>Pick-up location</Text>
                 </View>
+             
+             
               </View>
+              </TouchableWithoutFeedback>
               <View style={{ flex: 0.1 }} />
               {
                 !isReturnToSameLocation && (
-                <View style={{
-                  backgroundColor: '#ebebeb', flex: 0.45, borderRadius: 10, flexDirection: 'row',
-                }}
-                >
-                  <View style={{ flex: 0.12, justifyContent: 'center', alignItems: 'center' }}>
-                    <Image
-                      resizeMode="contain"
-                      source={require('../../assets/search.png')}
-                      style={{ width: 20, height: 20, tintColor: 'black' }}
-                    />
+                  <View style={{
+                    backgroundColor: '#ebebeb', flex: 0.45, borderRadius: 10, flexDirection: 'row',
+                  }}
+                  >
+                    <View style={{ flex: 0.12, justifyContent: 'center', alignItems: 'center' }}>
+                      <Image
+                        resizeMode="contain"
+                        source={require('../../assets/search.png')}
+                        style={{ width: 20, height: 20, tintColor: 'black' }}
+                      />
+                    </View>
+                    <View style={{ flex: 0.88, justifyContent: 'center' }}>
+                      <Text style={{ fontSize: 18, color: 'grey' }}>Drop-off location</Text>
+                    </View>
                   </View>
-                  <View style={{ flex: 0.88, justifyContent: 'center' }}>
-                    <Text style={{ fontSize: 18, color: 'grey' }}>Drop-off location</Text>
-                  </View>
-                </View>
                 )
               }
             </View>
@@ -188,12 +200,12 @@ class Home extends Component {
               </View>
 
             </View>
-            <View style={{ flex: 0.2, justifyContent:'center' , alignItems:'center' }}>
-            <Image
-                  resizeMode="contain"
-                  style={{ flex: 1, width: 60, height: 60 }}
-                  source={require('../../assets/fromto.png')}
-                />
+            <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center' }}>
+              <Image
+                resizeMode="contain"
+                style={{ flex: 1, width: 60, height: 60 }}
+                source={require('../../assets/fromto.png')}
+              />
             </View>
             <View style={{ flex: 0.4 }}>
               <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -270,7 +282,7 @@ class Home extends Component {
             <Switch trackColor={styles.green} value={this.state.isUnderAge} onValueChange={this.onChangeUnderAgeToggle.bind(this)} />
           </View>
           <View style={{ flex: 0.75, paddingTop: 20 }}>
-            <Button buttonText="SEARCH NOW" onPress={() => {}} />
+            <Button buttonText="SEARCH NOW" onPress={() => navigation.navigate('LoadingScreen')} />
           </View>
 
         </View>
