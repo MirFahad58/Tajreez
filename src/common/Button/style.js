@@ -7,6 +7,7 @@ export const Touchable = styled.TouchableOpacity`
     borderRadius : 3
     justifyContent:center
     alignItems:center
+    borderRadius : 10
 `;
 
 export const ButtonArea = styled.View`

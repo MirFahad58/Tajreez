@@ -26,6 +26,7 @@ const CarDetailNavigator = createMaterialTopTabNavigator({
     },
   }
   ,{
+    initialRouteName : 'AboutCompanyScreen',
     navigationOptions : {
       headerStyle: {
         backgroundColor: "blue"
