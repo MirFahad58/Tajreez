@@ -2,8 +2,10 @@ import AboutCar from "../screens/CarDetail/AboutCar/AboutCar";
 import AboutCompany from "../screens/CarDetail/AboutCompany/AboutCompany";
 import AboutInfo from "../screens/CarDetail/AboutInfo/AboutInfo";
 import { createMaterialTopTabNavigator } from 'react-navigation'
+import React from 'react'
+import { HeaderComponent } from "../common/Header/Header";
 
-export default CarDetailNavigator = createMaterialTopTabNavigator({
+const CarDetailNavigator = createMaterialTopTabNavigator({
     AboutCarScreen: {
       screen: AboutCar,
       navigationOptions : {
@@ -50,3 +52,14 @@ export default CarDetailNavigator = createMaterialTopTabNavigator({
       }
     }
   })
+
+  CarDetailNavigator.navigationOptions = ({ navigation }) => {
+    console.log(navigation , "is")
+    const header = <HeaderComponent onPress={() => navigation.pop()} headerText={'BMW-250'} showBackButton />
+    return {
+      header,
+    }
+  }
+
+
+  export default CarDetailNavigator;

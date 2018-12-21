@@ -1,5 +1,6 @@
 import { createDrawerNavigator, createStackNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 import Home from '../screens/Home/Home';
+import React from 'react'
 import AboutUs from '../screens/AboutUs/AboutUs';
 import Payments from '../screens/Payments/Payments';
 import Privacy from '../screens/Privacy/Privacy';
@@ -11,13 +12,15 @@ import AboutCompany from '../screens/CarDetail/AboutCompany/AboutCompany';
 import AboutInfo from '../screens/CarDetail/AboutInfo/AboutInfo';
 import CarDetailNavigator from './CarDetailNavigator';
 import Loading from '../screens/Loading/Loading';
-
+import { Text } from 'react-native'
+import { HeaderComponent } from '../common/Header/Header';
+import { NavigationActions } from 'react-navigation';
 
 const DrawerNavigator = createDrawerNavigator({
   HomeScreen: {
     screen: createStackNavigator({
       HomeScreen: {
-        screen: Loading,
+        screen: Home,
         navigationOptions: {
           header: null,
         },
@@ -59,10 +62,7 @@ const DrawerNavigator = createDrawerNavigator({
         },
       },
       CarDetail: {
-        screen: CarDetailNavigator,
-        navigationOptions: {
-          header: null,
-        },
+        screen: CarDetailNavigator
       },
     },
       {
