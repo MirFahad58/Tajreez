@@ -21,7 +21,7 @@ class AboutInfo extends Component {
         </View>
         <View style={{ flex: .2, justifyContent: 'center' }}>
           <View style={{ flex: 1, paddingTop: 20, justifyContent: 'center', marginHorizontal: 15 }}>
-            <Button buttonText="Book now" onPress={() => { }} />
+            <Button buttonText="Book now" onPress={() => navigation.navigate('DriverDetailsScreen')}/>
           </View>
         </View>
       </View>

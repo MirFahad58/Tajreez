@@ -95,7 +95,7 @@ class AboutCar extends Component {
       </View>
 
       <View style={{ flex: 0.15,paddingHorizontal: 15,paddingTop:20,backgroundColor:'white' }}>
-              <Button buttonText="Book now" onPress={() => { }} />
+              <Button buttonText="Book now" onPress={() => navigation.navigate('DriverDetailsScreen')} />
             </View>
       </View>
     );

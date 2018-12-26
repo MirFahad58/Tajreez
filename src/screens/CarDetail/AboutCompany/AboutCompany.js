@@ -57,7 +57,7 @@ class AboutCompany extends Component {
               <AboutItem showUnderLine={false} title={'Supplier location'} description={'Dubai Marina Mall, Lower Ground Floor, Dubai, U.A.E'} />
             </View>
             <View style={{ flex: 0.45,marginHorizontal: 15 , justifyContent:'center' }}>
-              <Button buttonText="Book now" onPress={() => { }} />
+              <Button buttonText="Book now" onPress={() => navigation.navigate('DriverDetailsScreen')} />
             </View>
           </View>
         </View>  
